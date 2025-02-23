@@ -1,0 +1,26 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('assets/fonts/fontawesome/css/fontawesome.min.css');
+@import url('assets/bootstrap.5.3.2.min.css');
+@import url('assets/fonts/farsi-font/farsi-fonts-styles/primary-pinar.css');
+
+.rtl {
+  direction: rtl;
+}
+
+*:not(i) {
+  font-family: primary-font, sans-serif !important;
+}
+html,
+body {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: #7f90a9 #e0e0e0;
+   /* overflow-x: hidden; */
+}
+
+body {
+  background: linear-gradient(to right, #2a5298, #1e3c72);
+  min-height: 100vh;
+  color: white;
+  transition: background 1s ease-in-out;
+}

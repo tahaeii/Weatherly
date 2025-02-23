@@ -1,0 +1,69 @@
+<!--==================================================-->
+<!-- Start Weatherly  Header Area Style Sixs-->
+<!--==================================================-->
+
+<main class="container mt-4">
+
+  <section class="date-container">
+    <h2 class="current-date">{{ currentDay }}، {{ currentDate }}</h2>
+  </section>
+  
+  <section class="row justify-content-center text-center">
+    <h1 class="col-12 city-title my-4">{{ weatherData?.name || 'آب و هوا' }}</h1>
+
+    <form [formGroup]="weatherForm" (ngSubmit)="searchCity()"
+      class="col-12 col-md-6 d-flex align-items-center justify-content-center mt-3">
+      <button type="submit" class="btn btn-primary px-3">جستجو</button>
+      <input type="text" formControlName="city" class="form-control rtl" placeholder="شهری را جستجو کنید..." />
+    </form>
+  </section>
+
+  <section class="current-weather mt-5 text-center" *ngIf="weatherData">
+    <div class="row align-items-center">
+      <div class="col-md-4 todays-info text-md-end">
+        <p class="my-4">{{ weatherData.dt * 1000 | date: 'HH:mm' }}
+          <span class="fw-medium"> :آخرین بروزرسانی</span>
+        </p>
+        <h2 class="fw-bold">{{ translatedDescription }}</h2>
+      </div>
+      <div class="col-md-4">
+        <div class="weather-card">
+          <h2>{{ translatedDescription }}</h2>
+          <h1 id="current-temperature">{{ weatherData.main.temp | number: '1.0-0' }}°C</h1>
+        <p class="text-secondary">{{ (weatherData.main.temp * 9/5) + 32 | number: '1.0-0' }}°F</p>
+        </div>
+      </div>
+      <div class="col-md-4 rtl lh-lg" style="justify-items: left;">
+        <ul class="list-unstyled weather-info" style="justify-items: right;">
+          <li>رطوبت:
+            <span>{{ weatherData.main.humidity }}%</span>
+          </li>
+          <li>وزش باد: <span>{{ weatherData.wind.speed }} m/s</span></li>
+          <li>احساس واقعی: <span>{{ weatherData.main.feels_like | number: '1.0-0' }}°C</span></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="w-75 my-4 mx-auto" />
+  </section>
+
+  <section class="mt-4" *ngIf="weeklyForecast.length">
+    <h3 class="text-center mb-4">📅 پیش‌بینی ۷ روز آینده</h3>
+    <div class="row justify-content-center g-3">
+      <div class="forecast-container">
+        <div *ngFor="let day of weeklyForecast" class="forecast-card">
+          <h3>{{ day.weekday }}</h3>
+          <img class="weather-icon" [src]="day.icon" alt="Weather Icon" width="60" height="60" />
+          <p class="weather">{{ day.description }}</p>
+          <span class="fw-bold">🌡 {{ day.tempMax | number: '1.0-0' }}° / {{ day.tempMin | number: '1.0-0' }}°</span>
+          <p *ngIf="day.rainChance > 10">🌧 احتمال بارش: {{ day.rainChance }}%</p>
+        </div>
+      </div>
+      
+      
+    </div>
+  </section>
+</main>
+
+<!--==================================================-->
+<!-- End Weatherly  Header Area -->
+<!--==================================================-->

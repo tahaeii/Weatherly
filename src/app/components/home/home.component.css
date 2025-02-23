@@ -1,0 +1,247 @@
+/* تنظیمات کلی */
+main {
+  margin-top: 30px;
+}
+
+/* خط جداکننده */
+hr {
+  width: 75%;
+  margin: 2rem auto;
+}
+
+/* فرم جستجو */
+.form-control {
+  max-width: 300px;
+  border-radius: 0 8px 8px 0;
+  border-left: 0;
+}
+
+.form-control:focus {
+  border-color: #3f51b5 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.btn {
+  border-radius: 8px 0 0 8px;
+}
+
+/* عنوان شهر */
+.city-title {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* دمای فعلی */
+#current-temperature {
+  font-size: 55px;
+  text-align: center;
+}
+
+/* اطلاعات امروز */
+.todays-info {
+  text-align: right;
+}
+
+p,
+ul {
+  font-family: 'Oxygen Mono', monospace;
+  font-size: 15px;
+}
+
+/* کارت‌های پیش‌بینی ۵ روزه */
+.forecast-card {
+  background: #f8f9fa;
+  padding: 10px;
+  border-radius: 10px;
+  transition: transform 0.2s;
+}
+
+.forecast-card:hover {
+  transform: scale(1.05);
+  background: #e9ecef;
+}
+
+/* لینک‌ها */
+a {
+  text-decoration: none;
+  color: #0a95c9;
+}
+
+a:hover {
+  color: #007bff;
+}
+
+.list-unstyled li{
+  font-weight: 500;
+}
+
+.list-unstyled li span{
+  font-weight: 100;
+}
+
+.weather-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.weather-card:hover {
+  transform: translateY(-5px);
+  /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+}
+.fade-in {
+  opacity: 0;
+  transform: scale(0.95);
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+#current-temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffcc00;
+  animation: softPulse 2s infinite;
+}
+
+@keyframes softPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.forecast-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.forecast-card {
+  flex: 0 0 120px;
+  padding: 15px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s;
+}
+
+.forecast-card:hover {
+  transform: scale(1.1);
+}
+
+
+.date-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.current-date {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(5px);
+  display: inline-block;
+}
+
+
+.weather-card {
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeInUp 0.6s ease-in-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+
+
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 15px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  color: white;
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+.weather-icon {
+  animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0px); }
+}
+
+.forecast-card:hover {
+  box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.2);
+  transform: translateY(-10px);
+}
+
+
+.forecast-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 20px;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: center;
+  color: white;
+  width: 100%; /* در موبایل یک کارت در هر ردیف */
+  max-width: 250px; /* محدودیت عرض کارت در دسکتاپ */
+}
+
+.forecast-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* تغییر چینش کارت‌ها در دسکتاپ */
+@media (min-width: 768px) {
+  .forecast-card {
+    width: calc(33.33% - 15px); /* در دسکتاپ، سه کارت در هر ردیف */
+  }
+}
+
+@media (min-width: 1024px) {
+  .forecast-card {
+    width: calc(20% - 15px); /* در صفحه‌های بزرگ، پنج کارت در هر ردیف */
+  }
+}
