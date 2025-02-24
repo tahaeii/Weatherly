@@ -13,12 +13,6 @@ import { SharedComponentsModule } from "./shared/shared.components.module";
 import { HomeComponentsModule } from './core/module/home-components.module';
 import { AuthInterceptor } from './core/helpers/auth.interceptor';
 
-import player from 'lottie-web';
-import { LottieModule } from 'ngx-lottie';
-
-export function playerFactory() {
-  return player;
-}
 
 @NgModule({
   declarations: [
@@ -28,7 +22,6 @@ export function playerFactory() {
 
 
   imports: [
-    LottieModule.forRoot({ player: playerFactory }),
     HomeComponentsModule,
     FormsModule,
     CommonModule,
