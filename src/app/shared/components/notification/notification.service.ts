@@ -22,7 +22,7 @@ export class NotificationService {
   }
 
   success(message: string, timeout: number) {
-    this._subject.next(new Notification(this._idx++, NotificationType.success, message, 0));
+    this._subject.next(new Notification(this._idx++, NotificationType.success, message, timeout));
   }
 
   warning(message: string, timeout: number) {

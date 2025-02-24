@@ -1,32 +1,5 @@
-/* تنظیمات کلی */
 main {
   margin-top: 30px;
-}
-
-/* فرم جستجو */
-.form-control {
-  max-width: 350px;
-}
-
-.city-title {
-  font-size: 32px;
-  font-weight: bold;
-}
-
-#current-temperature {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #ffcc00;
-  animation: softPulse 2s infinite;
-}
-
-@keyframes softPulse {
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
 }
 
 .weather-card {
@@ -40,16 +13,27 @@ main {
   transform: translateY(-5px);
 }
 
-.forecast-container {
-  /* display: flex;
-  overflow-x: auto;
-  gap: 10px;
-  padding: 10px; */
+#current-temperature {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ffcc00;
+  animation: softPulse 2s infinite;
+}
 
+@keyframes softPulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.forecast-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: stretch; /* Ensures equal height */
   gap: 16px;
 }
 
@@ -89,24 +73,9 @@ main {
   }
 }
 
-@media (min-width: 768px) {
-  .forecast-card {
-    width: calc(33.33% - 15px);
-  }
-}
-
-@media (min-width: 1024px) {
-  .forecast-card {
-    width: calc(20% - 15px);
-  }
-}
-
-/* Highlights the card for today's weather */
 .today-card {
   border: 2px solid #0d6efd;
   box-shadow: 0 0 10px #0d6efd;
   transform: scale(1.05);
   backdrop-filter: none;
 }
-
-
