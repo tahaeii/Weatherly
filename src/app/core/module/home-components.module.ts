@@ -4,16 +4,18 @@ import { HomeRoutes } from '../routes/home.routing';
 import { SharedComponentsModule } from '../../shared/shared.components.module';
 import { HomeComponent } from 'src/app/components/home/home.component';
 import { LottieModule } from 'ngx-lottie';
+import { timestamp } from 'rxjs';
+import { TimestampPipe } from '../pipe/timestamp.pipe';
 
 @NgModule({
   imports: [
     HomeRoutes,
     SharedComponentsModule,
-    LottieModule
   ],
   declarations: [
     // Declare and export components here
-    HomeComponent
+    HomeComponent,    
+    TimestampPipe
   ],
   exports: [
     // Declare and export components here
